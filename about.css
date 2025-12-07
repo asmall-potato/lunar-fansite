@@ -1,0 +1,76 @@
+/* Profile Section */
+.profile-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Parents images section */
+.parents-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.parents-gallery img {
+  max-width: 200px;
+  border-radius: 1rem;
+}
+
+.family-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.family-gallery img {
+  height: 300px;
+  width: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.family-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Social icons */
+.social-section {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  gap: 0.5rem;
+  align-items: center;
+}
+   
+/*MOBILE RESPONSIVE — UNDER 480px*/
+
+@media only screen and (max-width: 480px) {
+
+
+  .hero {
+    padding: 1rem;
+  }
+
+  /* Profile images */
+  .profile-section img,
+  .parents-gallery img {
+    width: 80%;
+    max-width: 260px;
+    height: auto;
+  }
+
+
+  
+  /* Gallery full width */
+  .family-gallery img {
+    width: 100%;
+    height: auto;
+  }
+}
+

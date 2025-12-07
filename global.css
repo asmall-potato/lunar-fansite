@@ -1,0 +1,126 @@
+/* ============================================================
+   GLOBAL STYLES (Used by ALL Pages)
+============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-image: url('wallpaperhome.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  font-family: Tahoma, monospace;
+  color: white;
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+nav a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+/* Button */
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #FFC300;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  padding: 1rem;
+}
+
+.contact a {
+  color: #FFD700;
+}
+
+.socials a {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.socials a:hover {
+  color: #FFD700;
+}
+
+/* Shared sections */
+h2, h3 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  color: #FFD700;
+}
+
+/* MOBILE */
+@media (max-width:480px){
+
+    body {
+        position: relative;
+        background-image: none !important;   /* stop desktop wallpaper */
+    }
+
+    body::before {
+        content:"";
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:-1;
+
+        background-image: url('mobile-responsive-background.png');
+        background-repeat:no-repeat;
+        background-position:center center;
+
+        /* choose ONE */
+        background-size: cover; 
+        /* background-size: contain; */
+    }
+
+}

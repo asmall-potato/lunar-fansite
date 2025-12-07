@@ -1,0 +1,356 @@
+/* ================================================================
+   BASE GLOBAL STYLES (DESKTOP DEFAULT)
+================================================================ */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  min-height: 100vh;
+
+  /* ❗ BREAK DOWN BACKGROUND SHORTHAND → allows mobile override */
+  background-image: url('wallpaperhome.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+/* INTRO TEXT */
+.intro-text {
+  text-align: center;
+  margin: auto 0;
+}
+
+.intro-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+}
+
+.intro-text .highlight {
+  color: #007BFF;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+/* BUTTON */
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #FFC300;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+.contact a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+.contact p {
+  margin: 0.25rem 0;
+}
+
+.socials a {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #FFD700;
+}
+
+/* GENEALOGY TREE */
+.journey-text {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  color: #FFD700;
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Parents & child layout */
+.generation {
+  display: grid;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.parents {
+  grid-template-columns: repeat(2, auto);
+  position: relative;
+}
+
+/* Person box */
+.person {
+  padding: 16px 32px;
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.person:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Colors */
+.parents .person:first-child {
+  background-color: #007BFF;
+}
+
+.parents .person:last-child {
+  background-color: #FFC107;
+  color: #333;
+}
+
+/* Parent connector line */
+.line-connector {
+  width: 20.8%;
+  height: 2px;
+  background-color: #007BFF;
+  position: absolute;
+  top: 46%;
+  left: 40%;
+}
+
+/* Vertical line to child */
+.line-connector::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 60px;
+  background-color: #007BFF;
+}
+
+/* Parent → child vertical line */
+.parents .person::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 60px;
+  background-color: #007BFF;
+}
+
+/* Child Box */
+.child-box {
+  background: linear-gradient(135deg, #007BFF, #FFC107);
+  color: #000;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 16px 40px;
+  margin-top: 60px;
+}
+
+/* Gallery */
+.family-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.family-gallery img {
+  height: 300px;
+  width: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.family-gallery img:hover {
+  transform: scale(1.05);
+}
+
+
+/* ================================================================
+   📱 MOBILE — max 480px
+================================================================ */
+
+@media only screen and (max-width: 480px) {
+
+  /* MOBILE WALLPAPER — now works */
+  body, html {
+    background-image: url('mobile-responsive-background.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
+
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  .intro-text p {
+    font-size: 0.95rem;
+  }
+
+  /* Tree Cleanup */
+  .generation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .parents {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .person {
+    width: 80%;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  /* Hide complex lines */
+  .line-connector,
+  .line-connector::after,
+  .parents .person::after {
+    display: none !important;
+  }
+
+  .child-box {
+    width: 80%;
+    padding: 14px 30px;
+    font-size: 17px;
+    margin-top: 1.4rem;
+  }
+
+  .family-gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+
+/* ================================================================
+   📲 TABLET — 481px to 768px
+================================================================ */
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+  /* Tablet gets alternate wallpaper if you want */
+  body, html {
+    background-image: url('mobile-responsive-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .intro-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .generation {
+    display: block;
+  }
+
+  .parents {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .person {
+    padding: 14px 28px;
+    font-size: 17px;
+  }
+
+  .family-gallery img {
+    height: 250px;
+  }
+}

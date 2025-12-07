@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUNAR</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="home.css">
+  <script src="script.js" defer></script>
+  <script src="calendar.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="hero">
+
+    <nav>
+        <!-- NAV LINKS -->
+        <a href="homepage.html">Home</a>
+        <a href="aboutus.html">About</a>
+        <a href="roadmap.html">Journey</a>
+        <a href="schedule.html">Schedule</a>
+
+    </nav>
+
+    <!--Automatic Work Schedule Pop-Up -->
+    <div id="workPopup" class="popup-overlay">
+        <div class="popup-box">
+            <button class="popup-close" id="popupCloseBtn">×</button>
+
+            <h2 class="popup-title">Today's Work Schedule</h2>
+                <div id="popupContent"></div>
+                    <button class="popup-btn" id="popupGoBtn">OK</button>
+        </div>
+    </div>
+
+<!-- MUSIC -->
+        <audio id="bgm" loop>
+            <source src="lunar song.MP3" type="audio/mpeg">
+        </audio>
+
+
+    <div class="intro-text">
+      <h1>Hi <span>!</span> I’m <span class="highlight">LUNAR.</span></h1>
+      <p>Namtan Tipnaree & Film Rachanun's kid.</p>
+      <br>
+      <a href="aboutus.html" class="btn">MORE ABOUT ME</a>
+    </div>
+    <div id="footer"></div>
+  </div>
+
+<script>
+  // Load the footer.html file into the div
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+
+//AUTOPLAY MUSIC/TAP EVERYWHERE
+const music = document.getElementById("bgm");
+music.volume = 0.35;
+
+let playing = false;
+
+/* Autoplay try */
+window.addEventListener("load", () => {
+    music.play().then(() => {
+        playing = true;
+        console.log("Autoplay OK");
+    }).catch(() => {
+        console.log("Autoplay blocked → tap to start.");
+    });
+});
+
+/* Toggle when tapping anywhere */
+document.addEventListener("click", () => {
+    if (!playing) {
+        music.play();
+        playing = true;
+    } else {
+        music.pause();
+        playing = false;
+    }
+});
+
+/* Stop when leaving page */
+window.addEventListener("beforeunload", () => {
+    music.pause();
+    music.currentTime = 0;
+});
+
+
+
+</script>
+</body>
+</html>

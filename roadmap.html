@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUNAR | Journey</title>
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="journey.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="hero">
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="aboutus.html">About</a>
+        <a href="roadmap.html">Journey</a>
+        <a href="schedule.html">Schedule</a>
+    </nav>
+
+    <div class="journey-text">
+      <h1>LUNAR's JOURNEY</h1>
+      
+    </div>
+
+    <div class="timeline">
+      <div class="event left">
+        <div class="event-content">
+          <h3>📍 Dec 7, 2024</h3>
+          <p>Lunar was born — the beginning of everything!</p>
+        </div>
+      </div>
+      <div class="event right">
+        <div class="event-content">
+          <h3>📍 Mar 6, 2025</h3>
+          <p>-The big mascot Lunar was introduced to the fans.</br></br>
+             -Join live streaming with NamtanFilm for "LIVE before NAMTAN FILM PRINCESS'S TALE FAN MEETING"</p>
+        </div>
+      </div>
+      <div class="event left">
+        <div class="event-content">
+          <h3>📍 Mar 8-9, 2025</h3>
+          <p>First appearance at NamtanFilm Princess Tale fan meeting in Thailand!</p>
+        </div>
+      </div>
+      <div class="event right">
+        <div class="event-content">
+          <h3>📍 April 5, 2025</h3>
+          <p>First time attend 53rd National Book Fair & 23rd Bangkok International Book Fair 2025 with NamtanFilm.</p>
+        </div>
+      </div>
+      <div class="event left">
+        <div class="event-content">
+          <h3>📍 August 16, 2025</h3>
+          <p>First public event  - Character Fest Thailand 2025 (Not GMMTV event) with other GMMTV mascots.</p>
+        </div>
+      </div>
+      <div class="event right">
+        <div class="event-content">
+          <h3>📍 November 4, 2025</h3>
+          <p>First time be the guest on GMMTV Live House with MUVMUV & ANY.</p>
+        </div>
+      </div>
+      <div class="event left">
+        <div class="event-content">
+          <h3>📍 December 7, 2025</h3>
+          <p>First public event - SF Friends Screening Disney's Zootopia 2 (Not GMMTV event) with NamtanFilm.</p>
+        </div>
+      </div>
+      
+    </div>
+    <div id="footer"></div>
+    
+  </div>
+
+  <script>
+    // Load the footer.html file into the div
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+        })
+      .catch(error => console.error("Error loading footer:", error));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll(".event").forEach(event => {
+      observer.observe(event);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUNAR's Work Schedule</title>
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="schedulestyles.css" />
+  <script src="script.js" defer></script>
+  <script src="calendar.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="hero">
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="aboutus.html">About</a>
+        <a href="roadmap.html">Journey</a>
+        <a href="schedule.html">Schedule</a>
+    </nav>
+<div id="schedule-app">
+    <div class="calendar">
+    <div class="calendar-header">
+      <button id="prevMonth" class="nav-btn">←</button>
+      <div id="monthYear"></div>
+      <button id="nextMonth" class="nav-btn">→</button>
+    </div>
+    <table id="calendarTable">
+      <thead>
+        <tr>
+          <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+        </tr>
+      </thead>
+      <tbody id="calendarBody"></tbody>
+    </table>
+  </div>
+
+  <div class="schedule">
+    <h2>Lunar's Work Schedule</h2>
+    <div id="scheduleList">Loading schedule...</div>
+  </div>
+    
+  </div>
+  <div id="footer"></div>
+</div>
+
+<script>
+  // Load the footer.html file into the div
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+</body>
+</html>
