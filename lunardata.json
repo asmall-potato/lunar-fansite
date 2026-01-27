@@ -113,18 +113,28 @@
   },
   {
     "date": "2026-01-27",
-    "time": "-",
-    "title": "SAMTUABAHT Debut Single - Official MV release",
-    "live": "YouTube : GMMTV RECORDS",
-    "url": "https://x.com/GMMTV/status/2014563873089888723?s=20"
+    "time": "9:30PM (BKK Time)",
+    "title": "SAMTUABAHT Debut Single - Official MV release @ GMMTV Live House",
+    "live": "YouTube : GMMTV Official",
+    "url": "https://x.com/GMMTV/status/2016091349062410609?s=20"
   },
   {
-    "date": "2026-01-30",
-    "time": "7PM (BKK Time)",
-    "title": "Fan Sign event of GMMTV Official Merchandise Booth",
-    "location": "Samyan Mitrtown Hall, 5th Floor, Samyan Mitrtown",
-    "url": "https://x.com/GMMTV/status/2009573477674848661/photo/4"
-  },
+  "2026-01-30": [
+    {
+      "time": "10:20AM - 10:45AM (BKK Time)",
+      "title": "Meet Polcasan, Babii, Permpoon, MuvMuv, LUNAR and Any at Naiin Bookfair 2026",
+      "location": "Main Stage,  Naiin Bookfair 2026 @ Samyan Mitrtown Hall, 5th Floor, Samyan Mitrtown",
+      "url": "https://x.com/GmmtvShop/status/2016058596555952301?s=20"
+    },
+    {
+      "time": "7PM (BKK Time)",
+      "title": "Fan Sign event of GMMTV Official Merchandise Booth",
+      "location": "Samyan Mitrtown Hall, 5th Floor, Samyan Mitrtown",
+      "url": "https://x.com/GMMTV/status/2009573477674848661/photo/4"
+    }
+  ]
+},
+
 
   {
     "date": "2026-02-01",
@@ -142,6 +152,7 @@
     "url": "https://x.com/JAPANEXPO_THAI/status/2011332568738906589/photo/1"
   }
 ]
+
 
 
 
