@@ -232,6 +232,11 @@ if (isCalendarPage) {
         const eventDiv = document.createElement("div");
         eventDiv.className = "event";
 
+        const dateHTML = event.date
+            ? `<div class="event-date">${event.date}</div>`
+            : "";
+
+
         const timeHTML = event.time
             ? `<div class="event-time">Time: ${event.time}</div>`
             : "";
@@ -253,6 +258,7 @@ if (isCalendarPage) {
             : "";
 
         eventDiv.innerHTML = `
+            ${dateHTML}
             <div class="event-name">${event.title || "-"}</div>
             ${timeHTML}
             ${locationHTML}
