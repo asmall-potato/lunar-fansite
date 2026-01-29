@@ -144,8 +144,7 @@
 }
 
 .event-location {
-  font-size: .9rem;
-  color: var(--text-light);
+  font-weight: normal;
 }
 
 .event-live {
@@ -225,4 +224,5 @@
     padding: 7px;
   }
 }
+
 
