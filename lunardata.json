@@ -1,158 +1,206 @@
-[
-    {
-    "date": "2025-08-16",
-    "time": "1:30 PM (BKK Time)",
-    "title": "Character Fest Thailand 2025",
-    "location": "Event Space, 1st Floor, CentralWorld",
-    "url": "https://www.instagram.com/p/DNDeTWGvhKR/?img_index=2"
-    
-    
-    },
-    {
-    "date": "2025-10-05",
-    "time": "12:00 PM (BKK Time)",
-    "title": "GMMTV FANDOM CHARACTER Parade",
-    "location": "Phenix Grand Ballroom 5th Floor",
-    "url": "https://www.instagram.com/p/DPY3YIzDwMy/"
-    
-    
-    },
-    {
-    "date": "2025-10-08",
-    "time": "1:30 PM (BKK Time)",
-    "title": "GMMTV FANDOM CHARACTER Parade",
-    "location": "Phenix Grand Ballroom 5th Floor",
-    "url": "https://www.instagram.com/p/DPgf2ZvEgAf/"
-    
-    
-    },
-    {
-    "date": "2025-10-10",
-    "time": "2:45 PM (BKK Time)",
-    "title": "MASCOT PARADE",
-    "location": "Exhibition Hall 3-4, G Floor, Queen Sirikit National Convention Center",
-    "url": "https://www.instagram.com/p/DPnaV1tEifS/"
-    
-    
-   },
-   {
-    "date": "2025-10-11",
-    "time": "12:00 PM (BKK Time)",
-    "title": "GMMTV FANDOM CHARACTER Parade",
-    "location": "Phenix Grand Ballroom 5th Floor",
-    "url": "https://www.instagram.com/p/DPoUnuHEtVp/"
-    
-    
-   },
-   {
-    "date": "2025-10-12",
-    "time": "1:30 PM (BKK Time)",
-    "title": "GMMTV FANDOM CHARACTER Parade",
-    "location": "Phenix Grand Ballroom 5th Floor",
-    "url": "https://www.instagram.com/p/DPq3qEpjyGY/"
-    
-    
-   },
-   {
-    "date": "2025-10-13",
-    "time": "1:00 PM (BKK Time)",
-    "title": "GMMTV FANDOM CHARACTER Parade",
-    "location": "Phenix Grand Ballroom 5th Floor",
-    "url": "https://www.instagram.com/p/DPtfa1ID7Hl/"
-    
-    
-  },
-  {
-    "date": "2025-11-04",
-    "time": "21:30 (BKK Time)",
-    "title": "GMMTV Live House",
-    "live": "Youtube/TikTok : GMMTV",
-    "url": "https://x.com/GMMTV/status/1985716533809799241?s=20"
-    
-    
-  },
-  {
-    "date": "2025-12-07",
-    "time": "17:00 (BKK Time)",
-    "title": "Disney's Zootopia 2 SF Friends Screening",
-    "location": "SF World Cinema Central World",
-    "url": "https://x.com/WeLoveSF/status/1990404640412782990?s=20"
-    
-  },
-  {
-    "date": "2025-12-07",
-    "title": "LUNAR's Birthday"
-  },
-  {
-    "date": "2025-12-23",
-    "time": "17.00 (BKK Time)",
-    "title": "SF Friends Screening Avatar : Fire and Ash",
-    "location": "SF World Cinema Central World",
-    "url": "https://x.com/WeLoveSF/status/1998331871206547597?s=20"
-  },
-  {
-    "date": "2026-01-24",
-    "time": "-",
-    "title": "SAMTUABAHT Debut Single - Poster 01 release",
-    "location": "-",
-    "url": "https://x.com/GMMTV/status/2014563873089888723?s=20"
-  },
-  {
-    "date": "2026-01-25",
-    "time": "-",
-    "title": "SAMTUABAHT Debut Single - Poster 02 release",
-    "location": "-",
-    "url": "https://x.com/GMMTV/status/2014563873089888723?s=20"
-  },
-  {
-    "date": "2026-01-26",
-    "time": "-",
-    "title": "SAMTUABAHT Debut Single - Teaser release",
-    "location": "-",
-    "url": "https://x.com/GMMTV/status/2014563873089888723?s=20"
-  },
-  {
-    "date": "2026-01-27",
-    "time": "9:30PM (BKK Time)",
-    "title": "SAMTUABAHT Debut Single - Official MV release @ GMMTV Live House",
-    "live": "YouTube : GMMTV Official",
-    "url": "https://x.com/GMMTV/status/2016091349062410609?s=20"
-  }, 
-  {
-      "date": "2026-01-30",
-      "time": "10:20AM - 10:45AM (BKK Time)",
-      "title": "Meet Polcasan, Babii, Permpoon, MuvMuv, LUNAR and Any at Naiin Bookfair 2026",
-      "location": "Main Stage,  Naiin Bookfair 2026 @ Samyan Mitrtown Hall, 5th Floor, Samyan Mitrtown",
-      "url": "https://x.com/GmmtvShop/status/2016058596555952301?s=20"
-    },
-    {
-      "date": "2026-01-30",
-      "time": "7PM (BKK Time)",
-      "title": "Fan Sign event of GMMTV Official Merchandise Booth",
-      "location": "Samyan Mitrtown Hall, 5th Floor, Samyan Mitrtown",
-      "url": "https://x.com/GMMTV/status/2009573477674848661/photo/4"
-    },
+{
+    "2025-08-16":[
+      {
+        "title": "Character Fest Thailand 2025",
+        "time": "1:30 PM (BKK Time)",
+        "location": "Event Space, 1st Floor, CentralWorld",
+        "artist": "Lunar",
+        "url": "https://www.instagram.com/p/DNDeTWGvhKR/?img_index=2",
+        "status": "passed"
+      }
+    ],
+
+    "2025-10-05":[
+      {
+        "title": "GMMTV FANDOM CHARACTER Parade",
+        "time": "12:00 PM (BKK Time)",
+        "location": "Phenix Grand Ballroom 5th Floor",
+        "artist": "Lunar",
+        "url": "https://www.instagram.com/p/DPY3YIzDwMy/",
+        "status": "passed"
+      }
+    ],
+
+    "2025-10-08":[
+      {
+        "title": "GMMTV FANDOM CHARACTER Parade",
+        "time": "1:30 PM (BKK Time)",
+        "location": "Phenix Grand Ballroom 5th Floor",
+        "artist": "Lunar",
+        "url": "https://www.instagram.com/p/DPgf2ZvEgAf/",
+        "status": "passed"
+      }
+    ],
+
+    "2025-10-10":[
+      {
+        "title": "MASCOT PARADE",
+        "time": "2:45 PM (BKK Time)",
+        "location": "Exhibition Hall 3-4, G Floor, Queen Sirikit National Convention Center",
+        "artist": "Lunar",
+        "url": "https://www.instagram.com/p/DPnaV1tEifS/",
+        "status": "passed"
+      }
+    ],
+
+    "2025-10-11":[
+      {
+        "title": "GMMTV FANDOM CHARACTER Parade",
+        "time": "12:00 PM (BKK Time)",
+        "location": "Phenix Grand Ballroom 5th Floor",
+        "artist": "Lunar",
+        "url": "https://www.instagram.com/p/DPoUnuHEtVp/",
+        "status": "passed"
+      }
+    ],
+
+    "2025-10-12":[
+      {
+        "title": "GMMTV FANDOM CHARACTER Parade",
+        "time": "1:30 PM (BKK Time)",
+        "location": "Phenix Grand Ballroom 5th Floor",
+        "artist": "Lunar",
+        "url": "https://www.instagram.com/p/DPq3qEpjyGY/",
+        "status": "passed"
+      }
+    ],
+
+    "2025-10-13":[
+      {
+        "title": "GMMTV FANDOM CHARACTER Parade",
+        "time": "1:00 PM (BKK Time)",
+        "location": "Phenix Grand Ballroom 5th Floor",
+        "artist": "Lunar",
+        "url": "https://www.instagram.com/p/DPtfa1ID7Hl/",
+        "status": "passed"
+      }
+    ],
+
+    "2025-11-04":[
+      {
+        "title": "GMMTV Live House",
+        "time": "21:30 (BKK Time)",
+        "live": "Youtube/TikTok : GMMTV",
+        "artist": "Lunar",
+        "url": "https://x.com/GMMTV/status/1985716533809799241?s=20",
+        "status": "passed"
+      }
+    ],
+
+    "2025-12-07":[
+      {
+        "title": "Disney's Zootopia 2 SF Friends Screening",
+        "time": "17:00 (BKK Time)",
+        "location": "SF World Cinema Central World",
+        "artist": "NamtanFilm and Lunar",
+        "url": "https://x.com/WeLoveSF/status/1990404640412782990?s=20",
+        "status": "passed"
+      },
+      {
+        "title": "LUNAR's Birthday",
+        "time": "-",
+        "location": "-",
+        "artist": "-",
+        "url": "-",
+        "status": "passed"
+      }
+    ],
+
+    "2025-12-23":[
+      {
+        "title": "SF Friends Screening Avatar : Fire and Ash",
+        "time": "17.00 (BKK Time)",
+        "location": "SF World Cinema Central World",
+        "artist": "NamtanFilm and Lunar",
+        "url": "https://x.com/WeLoveSF/status/1998331871206547597?s=20",
+        "status": "passed"
+      }
+    ],
+
+    "2026-01-24":[
+      {
+        "title": "SAMTUABAHT Debut Single - Poster 01 release",
+        "time": "-",
+        "location": "-",
+        "artist": "Lunar, MuvMuv, Any",
+        "url": "https://x.com/GMMTV/status/2014563873089888723?s=20",
+        "status": "passed"
+      }
+    ],
+
+    "2026-01-25":[
+      {
+        "title": "SAMTUABAHT Debut Single - Poster 02 release",
+        "time": "-",
+        "location": "-",
+        "artist": "Lunar, MuvMuv, Any",
+        "url": "https://x.com/GMMTV/status/2014563873089888723?s=20",
+        "status": "passed"
+      }
+    ],
+
+    "2026-01-26":[
+      {
+        "title": "SAMTUABAHT Debut Single - Teaser release",
+        "time": "-",
+        "location": "-",
+        "artist": "Lunar, MuvMuv, Any",
+        "url": "https://x.com/GMMTV/status/2014563873089888723?s=20",
+        "status": "passed"
+      }
+    ],
+
+    "2026-01-27":[
+      {
+        "title": "SAMTUABAHT Debut Single - Official MV release @ GMMTV Live House",
+        "time": "9:30PM (BKK Time)",
+        "live": "YouTube : GMMTV Official",
+        "artist": "Lunar, MuvMuv, Any",
+        "url": "https://x.com/GMMTV/status/2016091349062410609?s=20",
+        "status": "passed"
+      }
+    ], 
+
+    "2026-01-30":[
+      {
+        "title": "Meet Polcasan, Babii, Permpoon, MuvMuv, LUNAR and Any at Naiin Bookfair 2026",
+        "time": "10:20AM - 10:45AM (BKK Time)",
+        "location": "Main Stage,  Naiin Bookfair 2026 @ Samyan Mitrtown Hall, 5th Floor, Samyan Mitrtown",
+        "artist": "Lunar, MuvMuv, Any, Polcasan, Babii, Permpoon",
+        "url": "https://x.com/GmmtvShop/status/2016058596555952301?s=20"
+        
+      },
+      {
+        "title": "Fan Sign event of GMMTV Official Merchandise Booth",
+        "time": "7PM (BKK Time)",
+        "location": "Samyan Mitrtown Hall, 5th Floor, Samyan Mitrtown",
+        "artist": "NamtanFilm and Lunar",
+        "url": "https://x.com/GMMTV/status/2009573477674848661/photo/4"
+      }
+    ],
 
 
-  {
-    "date": "2026-02-01",
-    "time": "16.00 (BKK Time)",
-    "title": "SF Friends Screening: HUMAN RESOURCE พนักงานใหม่ (โปรดรับไว้พิจารณา)",
-    "location": "Cinema 15, SF World Cinema, CentralWorld",
-    "url": "https://x.com/WeLoveSF/status/2013235435624124616?s=20"
-  },
+    "2026-02-01":[
+      {
+        "title": "SF Friends Screening: HUMAN RESOURCE พนักงานใหม่ (โปรดรับไว้พิจารณา)",
+        "time": "16.00 (BKK Time)",
+        "location": "Cinema 15, SF World Cinema, CentralWorld",
+        "artist": "NamtanFilm and Lunar",
+        "url": "https://x.com/WeLoveSF/status/2013235435624124616?s=20"
+      }
+    ],
 
-  {
-    "date": "2026-02-08",
-    "time": "TBC",
-    "title": "GMMTV Fandom Characters @ JAPAN EXPO THAILAND 2026",
-    "location": "centralwOrld, Bangkok",
-    "url": "https://x.com/JAPANEXPO_THAI/status/2011332568738906589/photo/1"
-  }
-]
+    "2026-02-08":[
+      {
+        "title": "GMMTV Fandom Characters @ JAPAN EXPO THAILAND 2026",
+        "time": "TBC",
+        "location": "centralwOrld, Bangkok",
+        "artist": "Lunar",
+        "url": "https://x.com/JAPANEXPO_THAI/status/2011332568738906589/photo/1"
+      }
+    ]
 
-
-
+}
 
 
 
