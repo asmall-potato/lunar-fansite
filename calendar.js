@@ -30,12 +30,10 @@ if (isCalendarPage) {
         calendarBody.innerHTML = "";
         let row = document.createElement("tr");
 
-        // Empty cells for days before month starts
         for (let i = 0; i < firstDay.getDay(); i++) {
             row.appendChild(document.createElement("td"));
         }
 
-        // Days of the month
         for (let day = 1; day <= lastDay.getDate(); day++) {
             const cell = document.createElement("td");
             cell.textContent = day;
@@ -49,8 +47,10 @@ if (isCalendarPage) {
                 cell.classList.add("today");
             }
 
-            // Click day → show that date’s events
-            cell.addEventListener("click", () => showScheduleForDate(year, month + 1, day));
+            cell.addEventListener("click", () =>
+                showScheduleForDate(year, month + 1, day)
+            );
+
             row.appendChild(cell);
 
             if ((firstDay.getDay() + day) % 7 === 0) {
@@ -73,26 +73,79 @@ if (isCalendarPage) {
 }
 
 // ----------------------------
-// 📦 Load JSON Data (for both pages)
+// 📦 Load JSON Data (FOR BOTH FORMATS)
 // ----------------------------
 async function loadSchedule() {
     try {
         const response = await fetch("lunardata.json");
         const data = await response.json();
-        allEvents = data;
 
-        // Show popup on homepage
+        allEvents = [];
+
+        // ✅ CASE 1: Array format
+        if (Array.isArray(data)) {
+            data.forEach(event => {
+                if (!event.date) return;
+
+                allEvents.push({
+                    date: normalizeDate(event.date),
+                    title: event.title || "-",
+                    time: event.time || "-",
+                    location: event.location || "",
+                    live: event.live || "",
+                    artist: event.artist || "",
+                    status: event.status || "",
+                    url: event.url || "",
+                    remark: event.remark || ""
+                });
+            });
+        }
+
+        // ✅ CASE 2: Grouped-by-date object
+        else {
+            Object.entries(data).forEach(([date, events]) => {
+                events.forEach(event => {
+                    allEvents.push({
+                        date: normalizeDate(date),
+                        title: event.title || "-",
+                        time: event.time || "-",
+                        location: event.location || "",
+                        live: event.live || "",
+                        artist: event.artist || "",
+                        status: event.status || "",
+                        url: event.url || "",
+                        remark: event.remark || ""
+                    });
+                });
+            });
+        }
+
         checkTodaySchedule();
 
-        // Show calendar if on schedule page
         if (isCalendarPage) {
             renderCalendar(currentDate);
             displayScheduleForMonth();
         }
+
     } catch (error) {
         if (isCalendarPage) scheduleList.textContent = "Error loading schedule.";
         console.error("Error loading schedule:", error);
     }
+}
+
+// ----------------------------
+// 🛠️ Date Normalizer (NEW — SAFE)
+// ----------------------------
+function normalizeDate(dateStr) {
+    if (!dateStr) return "";
+
+    // Remove time if exists
+    let d = dateStr.split("T")[0];
+
+    // Replace slashes with dashes
+    d = d.replace(/\//g, "-");
+
+    return d;
 }
 
 // ----------------------------
@@ -104,19 +157,33 @@ function showTodayPopup(events) {
 
     if (!popup || !popupContent) return;
 
-    popupContent.innerHTML = events.map(e => `
-        <div style="margin-bottom: 10px; text-align: left;">
-            <strong>${e.title || "-"}</strong><br>
-            Time: ${e.time || "-"}<br>
-            ${e.location ? `Location: ${e.location}` : ""}
-            ${e.live ? `<div>${e.live}</div>` : ""}
-        </div>
-    `).join("");
+    popupContent.innerHTML = events.map(e => {
+        const dateObj = new Date(e.date);
+        const readableDate = isNaN(dateObj)
+            ? e.date
+            : dateObj.toLocaleDateString(undefined, {
+                  weekday: "short",
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric"
+              });
+
+        return `
+            <div style="margin-bottom: 14px; text-align: left;">
+                <div style="font-weight: bold; font-size: 1.1rem;">
+                    ${e.title || "-"}
+                </div>
+                <div>Date: ${readableDate}</div>
+                <div>Time: ${e.time || "-"}</div>
+                ${e.location ? `<div>Location: ${e.location}</div>` : ""}
+            </div>
+        `;
+    }).join("");
 
     popup.style.display = "block";
 }
 
-// Close popup buttons
+
 document.getElementById("popupCloseBtn")?.addEventListener("click", () => {
     document.getElementById("workPopup").style.display = "none";
 });
@@ -124,13 +191,34 @@ document.getElementById("popupGoBtn")?.addEventListener("click", () => {
     document.getElementById("workPopup").style.display = "none";
 });
 
-// Check today’s schedule for popup
 function checkTodaySchedule() {
     const today = new Date();
     const todayStr = today.toISOString().split("T")[0];
     const todayEvents = allEvents.filter(ev => ev.date === todayStr);
-    if (todayEvents.length > 0) showTodayPopup(todayEvents);
+
+    if (todayEvents.length > 0) {
+        showTodayPopup(todayEvents);
+    } else {
+        showNoSchedulePopup();
+    }
 }
+
+function showNoSchedulePopup() {
+    const popup = document.getElementById("workPopup");
+    const popupContent = document.getElementById("popupContent");
+
+    if (!popup || !popupContent) return;
+
+    popupContent.innerHTML = `
+        <div style="text-align: center; font-size: 1.1rem; font-weight: bold;">
+            No schedule for <span style="color:#1e90ff;">LUNAR</span> today 🐼🐣
+        </div>
+    `;
+
+    popup.style.display = "block";
+}
+
+
 
 // ----------------------------
 // 🗓️ Calendar Display Functions
@@ -138,67 +226,72 @@ function checkTodaySchedule() {
 if (isCalendarPage) {
 
     function displaySchedule(data) {
-        scheduleList.innerHTML = "";
-        data.forEach(event => {
-            const eventDiv = document.createElement("div");
-            eventDiv.className = "event";
+    scheduleList.innerHTML = "";
 
-            const urlHTML = event.url
-                ? `<a href="${event.url}" target="_blank" rel="noopener noreferrer">More Info</a>`
-                : "";
+    data.forEach(event => {
+        const eventDiv = document.createElement("div");
+        eventDiv.className = "event";
 
-            const locationHTML = event.location ? `<div class="event-location">Location: ${event.location}</div>` : "";
-            const liveHTML = event.live ? `<div class="event-live">${event.live}</div>` : "";
-            const remarkHTML = event.remark ? `<div class="event-remark">${event.remark}</div>` : "";
+        const timeHTML = event.time
+            ? `<div class="event-time">Time: ${event.time}</div>`
+            : "";
 
-            eventDiv.innerHTML = `
-                <div>
-                    <span class="event-date">${event.date || "-"}</span>
-                </div>
-                <div class="event-time">${event.time || "-"}</div>
-                <div class="event-name">${event.title || "-"}</div>
-                ${locationHTML}
-                ${liveHTML}
-                ${urlHTML}
-                ${remarkHTML}
-            `;
+        const locationHTML = event.location
+            ? `<div class="event-location">Location: ${event.location}</div>`
+            : "";
 
-            scheduleList.appendChild(eventDiv);
-        });
-    }
+        const artistHTML = event.artist
+            ? `<div class="event-artist">Artist: ${event.artist}</div>`
+            : "";
+
+        const urlHTML = event.url
+            ? `<div class="event-url">
+                   <a href="${event.url}" target="_blank" rel="noopener noreferrer">
+                       More Info
+                   </a>
+               </div>`
+            : "";
+
+        eventDiv.innerHTML = `
+            <div class="event-name">${event.title || "-"}</div>
+            ${timeHTML}
+            ${locationHTML}
+            ${artistHTML}
+            ${urlHTML}
+        `;
+
+        scheduleList.appendChild(eventDiv);
+    });
+}
+
+
 
     function showScheduleForDate(year, month, day) {
         const monthStr = month.toString().padStart(2, "0");
         const dayStr = day.toString().padStart(2, "0");
         const dateStr = `${year}-${monthStr}-${dayStr}`;
 
-        const filtered = allEvents.filter(e => {
-            const evDateParts = e.date.split("-");
-            const evYear = evDateParts[0];
-            const evMonth = evDateParts[1].padStart(2,"0");
-            const evDay = evDateParts[2].padStart(2,"0");
-            return `${evYear}-${evMonth}-${evDay}` === dateStr;
-        });
+        const filtered = allEvents.filter(e => e.date === dateStr);
 
         if (filtered.length > 0) displaySchedule(filtered);
         else scheduleList.innerHTML = `<p>No events on ${dateStr}</p>`;
     }
 
     function displayScheduleForMonth() {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1; // JS months are 0-based
-    const filtered = allEvents.filter(event => {
-        const [eventYear, eventMonth] = event.date.split("-").map(Number);
-        return eventYear === year && eventMonth === month;
-    });
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1;
 
-    if (filtered.length > 0) {
-        displaySchedule(filtered);
-    } else {
-        scheduleList.innerHTML = `<p>No events for ${monthYear.textContent}</p>`;
+        const filtered = allEvents.filter(event => {
+            const [eventYear, eventMonth] = event.date.split("-").map(Number);
+            return eventYear === year && eventMonth === month;
+        });
+
+        if (filtered.length > 0) {
+            displaySchedule(filtered);
+        } else {
+            scheduleList.innerHTML = `<p>No events for ${monthYear.textContent}</p>`;
+        }
     }
-}
-
 }
 
 // ----------------------------
