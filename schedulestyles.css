@@ -93,16 +93,15 @@
 
 .schedule {
   background: white;
+  color: var(--text-dark);   /* text colour*/
 
   border-radius: 12px;
   padding: 20px 40px;
-
   width: 400px;
-
   border-top: 8px solid var(--primary);
-
   box-shadow: 0 4px 8px rgba(0,0,0,.1);
 }
+
 
 .schedule h2 {
   color: var(--primary);
