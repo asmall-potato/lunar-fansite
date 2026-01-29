@@ -124,10 +124,12 @@
 .event-date {
   color: var(--primary);
   font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #e6c200; /* softer golden yellow */
 }
 
 .event-time {
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .event-name {
@@ -223,3 +225,4 @@
     padding: 7px;
   }
 }
+
